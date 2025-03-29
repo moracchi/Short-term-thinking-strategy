@@ -1,0 +1,383 @@
+/* ================== 基本設定 ================== */
+:root {
+    --primary: #2a6dd0;
+    --primary-light: #e8f0fe;
+    --secondary: #ff7842;
+    --dark: #1a202c;
+    --light: #f8fafc;
+    --gray: #64748b;
+    --gray-light: #e2e8f0;
+    --success: #10b981;
+    --warning: #f59e0b;
+    
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    
+    --radius-sm: 0.25rem;
+    --radius-md: 0.5rem;
+    --radius-lg: 1rem;
+    
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+    line-height: 1.7;
+    color: var(--dark);
+    background-color: var(--light);
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+ul {
+    padding-left: 1.5rem;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.section {
+    padding: 5rem 0;
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    margin-bottom: 3rem;
+    font-size: 2rem;
+    color: var(--primary);
+}
+
+.section-title .material-symbols-rounded {
+    margin-right: 0.75rem;
+    font-size: 2.25rem;
+}
+
+.material-symbols-rounded {
+    font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 40;
+}
+
+/* ================== ヒーローセクション ================== */
+.hero {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 80vh;
+    background: linear-gradient(135deg, #2a6dd0, #5691f0);
+    color: white;
+    padding: 2rem;
+    overflow: hidden;
+}
+
+.hero-content {
+    max-width: 600px;
+    position: relative;
+    z-index: 2;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+}
+
+.subtitle {
+    font-size: 1.25rem;
+    opacity: 0.9;
+    margin-bottom: 2rem;
+}
+
+.hero-visual {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-icon {
+    font-size: 20rem !important;
+    color: rgba(255, 255, 255, 0.15);
+}
+
+.lead-text {
+    font-size: 1.25rem;
+    max-width: 800px;
+    margin: 0 auto 2rem;
+    text-align: center;
+    color: var(--gray);
+}
+
+/* ================== カードグリッド ================== */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.info-card {
+    background: white;
+    border-radius: var(--radius-md);
+    padding: 2rem;
+    box-shadow: var(--shadow-md);
+    transition: var(--transition);
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.card-icon {
+    display: inline-block;
+    font-size: 3rem !important;
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+}
+
+.info-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.info-card ul {
+    color: var(--gray);
+}
+
+/* ================== デメリットセクション ================== */
+.dark-section {
+    background-color: var(--dark);
+    color: white;
+}
+
+.dark-section .section-title {
+    color: white;
+}
+
+.disadvantage-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.disadvantage-item {
+    position: relative;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-md);
+    padding: 2rem;
+    transition: var(--transition);
+    text-align: center;
+}
+
+.disadvantage-item:hover {
+    transform: scale(1.03);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.disadvantage-item .material-symbols-rounded {
+    font-size: 2.5rem !important;
+    color: var(--secondary);
+    margin-bottom: 1rem;
+}
+
+/* ================== タブ ================== */
+.tabs {
+    margin-top: 2rem;
+}
+
+.tabs-header {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.tab-btn {
+    padding: 0.75rem 1.25rem;
+    background: var(--gray-light);
+    border: none;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.tab-btn.active {
+    background: var(--primary);
+    color: white;
+}
+
+.tab-panel {
+    display: none;
+}
+
+.tab-panel.active {
+    display: block;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.solution-detail {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    background: white;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+    padding: 2rem;
+}
+
+.solution-visual {
+    flex: 0 0 150px;
+    text-align: center;
+}
+
+.solution-icon {
+    font-size: 5rem !important;
+    color: var(--primary);
+}
+
+.solution-text {
+    flex: 1;
+}
+
+.solution-text h3 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+/* ================== 実践ステップ ================== */
+.implementation-section {
+    background-color: var(--primary-light);
+}
+
+.steps-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.step {
+    display: flex;
+    margin-bottom: 2rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.step.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.step-number {
+    flex: 0 0 50px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--primary);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin-right: 1.5rem;
+}
+
+.step-content {
+    flex: 1;
+    background: white;
+    padding: 1.5rem;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+}
+
+.step-content h3 {
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+}
+
+/* ================== フッター ================== */
+footer {
+    background-color: var(--dark);
+    color: white;
+    text-align: center;
+    padding: 2rem;
+}
+
+/* ================== レスポンシブ ================== */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 4rem 1rem;
+    }
+    
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero-icon {
+        font-size: 10rem !important;
+        margin-top: 2rem;
+    }
+    
+    .solution-detail {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .section-title {
+        font-size: 1.75rem;
+        text-align: center;
+        justify-content: center;
+    }
+    
+    .tabs-header {
+        justify-content: center;
+    }
+    
+    .step {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .step-number {
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .section {
+        padding: 3rem 0;
+    }
+    
+    .tab-btn {
+        font-size: 0.875rem;
+        padding: 0.5rem 0.75rem;
+    }
+}
